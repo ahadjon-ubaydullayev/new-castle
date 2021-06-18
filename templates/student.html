@@ -1,0 +1,444 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+			<div class="content-item">
+			<!-- title -->
+				<div class="build-title">
+					<h3 class="page-title">
+            O‘quvchi va talabalarni ro‘yhatga olish jurnali
+					</h3>
+					<a class='enter' onclick="addStudent()">Kiritish</a>
+				</div>
+				<div class="container">
+					<div class="build-search build-search_teacher">
+						<div class="build-top">
+							<div class="build-top__item">
+								<input type="text" name="build-search" placeholder="Search">
+								<img class="build-search__img" src="{% static 'images/search.svg'%}" alt="search">
+
+								<div class="filter">
+									<div class="filter-text">
+										<img class="filter-img" src="{% static 'images/filter.svg'%}" alt="filter-img">
+										Filter <img class="filter-arrow" src="{% static 'images/export-icon-2.svg'%}" alt="filter-arrow">
+									</div>
+									<ul class="filter-list">
+										<li class="filter-list__item">
+											<a href="#">Ijobiy aloqa</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">Salbiy aloqa</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">SMS aloqa</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">Faol o‘quvchilar</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">Nofaol o‘quvchilar</a>
+										</li>
+                                       <li class="filter-list__item">
+											<a href="#">Guruhdan chiqarilgan</a>
+										</li>
+                                       <li class="filter-list__item">
+											<a href="#">Qora ro’yhatdagilar</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="build-top__item build-export__second">
+								<ul class="build-export">
+									<li class="build-export__item">Export</li>
+									<ul class="build-export__dropdown">
+										<li><a href="#"><img src="{% static 'images/word.svg'%}" alt="export icon">Word</a></li>	
+										<li><a href="#"><img src="{% static 'images/excel.svg'%}" alt="export icon">Excel</a></li>
+										<li><a href="#"><img src="{% static 'images/pdf.svg'%}" alt="export icon">Pdf</a></li>
+									</ul>
+								</ul>
+								<div class="build-export__number">
+									<span>Show</span> <input type="number" name="number" value="7">
+								</div>
+
+								<div class="categories">
+									Categories
+									<ul class="categories-list">
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-1">
+											<label for="cat-1">Talabaning yoshi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-2">
+											<label for="cat-2">Taqdim qilgan hujjat turi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-3">
+											<label for="cat-3">Shaxsini tasdiqlovchi
+                        hujjat seriya va raqami</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-4">
+											<label for="cat-4">Bilim darajasi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-5">
+											<label for="cat-5">Talabaga ma’qul
+                        o’qish kunlari</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-6">
+											<label for="cat-6">Gruppani yoshga
+                        doir holati</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-7">
+											<label for="cat-7">Yashash joyi manzili</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-8">
+											<label for="cat-8">Login</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-9">
+											<label for="cat-9">Filial va bo‘lim
+                        binoni tanlash</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-10">
+											<label for="cat-10">Telefon  raqamlar</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<ul class="student-table build-table build-table--bold ">
+							<li class="build-table__item">
+								№
+							</li>
+							<li class="build-table__item">
+								Talabaning F.I.O
+							</li>
+							<li class="build-table__item">
+								ID-kodi
+							</li>
+							<li class="build-table__item">
+                Ro’yxatdan o’tgan sana
+							</li>
+							<li class="build-table__item">
+								Tug’ilgan sana
+							</li>
+              <li class="build-table__item">
+								Talabaning yoshi
+							</li>
+							<li class="build-table__item">
+								Taqdim qilgan hujjat turi
+							</li>
+							<li class="build-table__item">
+								Shaxsini tasdiqlovchi hujjat seriya va raqami
+							</li>
+							<li class="build-table__item">
+								Bilim darajasi
+							</li>
+							<li class="build-table__item">
+								Talabaga ma’qul   o’qish kunlari
+							</li>
+							<li class="build-table__item">
+								Gruppani yoshga doir holati
+							</li>
+
+							<li class="build-table__item">
+								Yashash joyi manzili
+							</li>
+							<li class="build-table__item">
+                Filial va bo‘lim binoni tanlash
+							</li>
+							<li class="build-table__item">
+								Telefon  raqamlar
+							</li>
+							<li class="build-table__item">
+								Login
+							</li>
+              <li class="build-table__item">
+								Parol
+							</li>
+              <li class="build-table__item">
+								Status
+							</li>
+              <li class="build-table__item build-table__item--7">
+							</li>
+						</ul>
+					</div>
+					<!-- 
+						Jadval ro'yhati
+					-->
+					{% for s in student %}
+					<ul class="student-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							{{s.id}}
+						</li>
+						<li class="build-table__item">
+							{{ s.first_name }} {{ s.middle_name}} {{ s.last_name}}
+						</li>
+						<li class="build-table__item">
+							{{s.id_code}}
+						</li>
+						<li class="build-table__item">
+							{{s.register_date}}
+						</li>
+						<li class="build-table__item">
+							{{s.born_date}}
+						</li>
+						<li class="build-table__item">
+							{{s.student_age}}
+						</li>
+						<li class="build-table__item">
+							{{s.document_type}}
+						</li>
+						<li class="build-table__item">
+							{{s.id_number}}
+						</li>
+						<li class="build-table__item">
+							{{s.level}}
+						</li>
+						<li class="build-table__item">
+							{{s.free_time}}
+						</li>
+						<li class="build-table__item">
+							{{s.age_level}}
+						</li>
+						<li class="build-table__item">
+							{{s.address}}
+						</li>
+						<li class="build-table__item">
+							{{s.building_name}}
+						</li>
+						<li class="build-table__item">
+							<div>{{s.tel_number}}</div>
+							<div></div>
+						</li>
+						<li class="build-table__item">
+							{{s.student_login}}
+						</li>
+						<li class="build-table__item">
+							{{s.student_password}}
+						</li>
+						<li class="build-table__item">
+							{{s.status}}
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="{% url "students" %}?id={{ s.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
+										Taxrirlash</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<a href="{% url "students" %}{{ s.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
+                                        O‘chirish</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					{% endfor %}
+          			<ul class="pagination">
+						<!-- pagination chap ikonka -->
+						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg'%}" alt="pagination icon"></a></li>
+						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
+						<li><a class="pagination__item" href="#">2</a></li>
+						<li><a class="pagination__item" href="#">3</a></li>
+						<li><a class="pagination__item" href="#">4</a></li>
+						<li class="pagination__item pagination-more">...</li>
+						<!-- pagination o'ng ikonka -->
+						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg'%}" alt="pagination icon"></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- modal -->
+		<div id="modal" class="modal modal-select">
+			<form action="#" class="modal-wrapper modal-wrapper_huge" method="POST">
+				<div class="modal-inner">
+					<h4 class="modal__title">O‘qituvchi va hodimlarni ro‘yhatga olish </h4>
+					<div class="modal-select__item modal-three">
+            <div class="modal-select__box">
+              <label for="fname">Ismi</label>
+							<input id="fname" class="modal-input" type="text" name="fname" placeholder="Shahzod">
+            </div>
+            <div class="modal-select__box">
+              <label for="birthday">Tug’ilgan sanasi</label>
+							<input id="birthday" class="modal-input" type="date" name="birthday" value="2020-01-22">
+            </div>
+						<div class="modal-select__box">
+              <label>Shaxsni tasdiqlovchi hujjat turi</label>
+							<div class="radio" style="grid-template-columns: 0.3fr 0.7fr 0.3fr 0.7fr 0.3fr 0.7fr;">
+								<input type="radio" name="doc" id="pass" value="Passport">
+								<label for="pass">Passport</label>
+								<input type="radio" name="doc" id="metrika" value="Metrka">
+								<label for="metrika">Metrka</label>
+								<input type="radio" name="doc" id="id" value="id">
+								<label for="id">ID-Card</label>
+							</div>
+            </div>
+          </div>
+          <div class="modal-select__item modal-three">
+            <div class="modal-select__box">
+				<label for="surname">Familyasi</label>
+				<input id="surname" class="modal-input" type="text" name="surname" placeholder="Ismoilov">
+            </div>
+            <div class="modal-select__box">
+              <label for="app-date">Ro‘yhatdan o‘tgan sana</label>
+				<input id="app-date" class="modal-input" type="date" name="app-date" value="2020-01-22">
+            </div>
+				<div class="modal-select__box">
+				<label for="passport">Passport seriyasi va raqami</label>
+				<div class="modal-passport">
+					<input id="passport" type="text" class="modal-input" placeholder="AB">
+					<input type="text" class="modal-input" placeholder="1234567">
+				</div>
+            </div>
+          </div>
+          <div class="modal-select__item modal-three">
+						<div class="modal-select__box">
+              <label for="father-name">Otasining ismi</label>
+							<input id="father-name" class="modal-input" type="text" name="father-name" placeholder="Farrux o‘g‘li">
+            </div>
+						<div class="modal-select__box">
+              <label for="id-code">ID-Kodi </label>
+							<input id="id-code" class="modal-input" type="text" name="id-code" placeholder="100007784">
+            </div>
+						<div class="modal-select__box">
+              <label for="id-card">ID-Card raqami</label>
+							<input id="id-card" class="modal-input" type="text" name="id-card" placeholder="AB1234567">
+            </div>
+            
+          </div>
+					<div class="modal-select__item modal-three">
+						<div class="modal-select__box">
+							<label for="gender">Jinsi</label>
+							<select id="gender" class="modal-input" name="gender">
+								<option value="Erkak">Erkak</option>
+								<option value="Ayol">Ayol</option>
+							</select>
+            </div>
+			<div class="modal-select__box">
+				<label for="address">Yashash joyi manzili</label>
+				<input type="text" name="address" id="address" class="modal-input" placeholder="Marhamat tumani Mingtepa MFY Ipak yo‘li ko‘chasi 83">
+            </div>
+				<div class="modal-select__box">
+				<label for="app-time">O‘ziga ma’qul vaqt</label>
+				<div class="modal-passport">
+					<input id="app-time" type="text" class="modal-input" placeholder="08:00">
+					<select class="modal-input" name="week-day">
+						<option>Dushanba</option>
+						<option>Seshanba</option>
+						<option>Chorshanba</option>
+					</select>
+				</div>
+            </div>
+            
+          </div>
+					<div class="modal-select__item modal-three">
+						<div class="modal-select__box">
+							<label for="login">Login</label>
+							<input type="text" class="modal-input" name="login" id="login" placeholder="Login">
+            </div>
+
+						<div class="modal-select__box">
+							<label for="knowledge">O‘quvchining bilim darajasi</label>
+							<input type="text" class="modal-input" name="knowledge" id="knowledge" placeholder="0">
+            </div>
+
+						<div class="modal-select__box">
+							<label for="tel">Telefon raqamlari</label>
+							<input type="tel" class="modal-input" name="tel" id="tel" placeholder="+99893 123 45 67">
+            </div>
+          </div>
+
+					<div class="modal-select__item modal-three">
+						<div class="modal-select__box">
+							<label for="password">Parol</label>
+							<div class="password-wrapper">
+								<input type="text" class="modal-input" name="password" id="password">
+								<div class="password-icon"></div>
+							</div>
+						</div>
+					<div class="modal-select__box">
+						<label for="building">Filial va o‘quv binoni tanlash</label>
+						<select id="building" class="modal-input" name="building">
+							<option>Birinchi bino</option>
+							<option>Ikkinchi bino</option>
+							<option>Asosiy bino</option>
+						</select>
+					</div>
+
+					<div class="modal-select__box">
+						<label for="captcha">Rasmdagi matnni kiriting</label>
+						<div class="captcha">
+							<input type="text" class="modal-input" id="captcha"
+							placeholder="WD54J">
+							<img class="captcha-img" src="{% static 'images/captcha.png'%}" alt="captcha">
+						</div>
+				</div>
+			</div>
+		</div>
+
+				<div class="input-buttons input-buttons_plus">
+					<div class="input-buttons__item grey-wrap">
+
+						<div class="grey-btn">
+							<img src="{% static 'images/grey-phone.svg'%}" alt="grey img">
+							Ijobiy aloqa
+							<img class="grey-arrow" src="{% static 'images/export-icon-2.svg'%}" alt="grey img">
+							<div class="filter">
+								<ul class="filter-list">
+									<li class="filter-list__item">
+										<a href="#">Ijobiy aloqa</a>
+									</li>
+									<li class="filter-list__item">
+										<a href="#">Salbiy aloqa</a>
+									</li>
+									<li class="filter-list__item">
+										<a href="#">SMS aloqa</a>
+									</li>
+									<li class="filter-list__item">
+										<a href="#">Faol o‘quvchilar</a>
+									</li>
+									<li class="filter-list__item">
+										<a href="#">Nofaol o‘quvchilar</a>
+									</li>
+									<li class="filter-list__item">
+										<a href="#">Guruhdan chiqarilgan</a>
+									</li>
+									<li class="filter-list__item">
+										<a href="#">Qora ro’yhatdagilar</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+
+						<div class="grey-btn">
+							<img src="{% static 'images/grey-phone-bad.svg'%}" alt="grey img">
+							Salbiy aloqa
+							<img class="grey-arrow" src="{% static 'images/export-icon-2.svg'%}" alt="grey img">
+						</div>
+
+						<div class="grey-btn">
+							<img src="{% static 'images/grey-message.svg'%}" alt="grey img">
+							Sms aloqa
+							<img class="grey-arrow" src="{% static 'images/export-icon-2.svg'%}" alt="grey img">
+						</div>
+
+					</div>
+					<div class="input-buttons__item">
+						<button id="modal-close" class="input-btn" type="button">Bekor qilish</button>
+						<button class="input-btn input-btn--submit" type="submit">Saqlash</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		 <script>
+    function addStudent() {
+      window.location.href = '{% url "students" %}?add=true';
+    }
+          </script>
+{% endblock %}

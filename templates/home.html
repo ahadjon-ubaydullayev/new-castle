@@ -1,0 +1,113 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Smart English{% endblock %}
+{% block content %}
+<div class="content-item">
+		<!-- title -->
+		<h3 class="page-title">
+			Bosh sahifa
+		</h3>
+		<!-- cards -->
+		<section class="section-page cards">
+			<div class="cards-box theme-blue">
+				<h1 class="cards__title">
+					<img class="cards__img" src="{% static 'images/cards-1.png' %}" alt="card box">
+					Sozlamalarni <br>
+					kiritish
+				</h1>
+				<ul class="cards__list">
+					<li class="cards__list-item">Dars soati va xonalarni kiritish</li>
+					<li class="cards__list-item">O‘qituvchi va xonalar turini kiritish</li>
+					<li class="cards__list-item">O‘quv badal oylik to‘lov turlarini kiritish</li>
+					<li class="cards__list-item">Bino va filiallarini kiritish</li>
+					<li class="cards__list-item">Boshqa qo‘shimcha fanlarni kiritish</li>
+				</ul>
+				<a class="cards-btn" href="{% url 'config'%}">Batafsil</a>
+			</div>
+
+			<div class="cards-box theme-magenta">
+				<h1 class="cards__title">
+					<img class="cards__img" src="{% static 'images/cards-2.png' %}" alt="card box">
+					Ro‘yxatdan <br>
+					o‘tish
+				</h1>
+				<ul class="cards__list">
+					<li class="cards__list-item">O‘qituvchi va xodimlarni ro‘yxatdan o‘tkazish</li>
+					<li class="cards__list-item">Xodimlarni umumiy ro‘yxarga olingan jurnalga
+						o‘tish</li>
+					<li class="cards__list-item">O‘quvchi va talabalarni qabulxona ro‘yxatiga
+						olish</li>
+					<li class="cards__list-item">Talabalarni ro‘yxatga olingan umumiy jurnalga
+						o‘tish</li>
+				</ul>
+				<a class="cards-btn" href="#">Batafsil</a>
+			</div>
+
+			<div class="cards-box theme-yellow">
+				<h1 class="cards__title">
+					<img class="cards__img" src="{% static 'images/cards-3.png' %}" alt="card box">
+					Yangi guruh tashkil <br>
+					etish
+				</h1>
+				<ul class="cards__list">
+					<li class="cards__list-item">Yangi guruh jurnalini ochish va sozlash </li>
+					<li class="cards__list-item">Qo‘shimcha guruh tashkil qilish va uni sozlash</li>
+					<li class="cards__list-item">Amaldagi faol guruhlar jurnaliga o‘tish</li>
+					<li class="cards__list-item">Tugatilgan yopilgan guruhlar jurnaliga o‘tish</li>
+				</ul>
+				<a class="cards-btn" href="#">Batafsil</a>
+			</div>
+
+			<div class="cards-box theme-purple">
+				<h1 class="cards__title">
+					<img class="cards__img" src="{% static 'images/cards-4.png' %}" alt="card box">
+					Guruhlarni <br>
+					boshqarish
+				</h1>
+				<ul class="cards__list">
+					<li class="cards__list-item">Mavjud guruhni keyingi bosqichga o‘tkazish</li>
+					<li class="cards__list-item">O‘quchini guruhdan boshqa guruhga o‘tkazish</li>
+					<li class="cards__list-item">Guruh o‘qituvchisini boshqa o‘qituvchiga
+						almashtirish</li>
+					<li class="cards__list-item">Dars soati tugagan guruhni yopish </li>
+					<li class="cards__list-item">Favqulodda mavjud guruhni to‘xtatish va
+						tugatish</li>
+				</ul>
+				<a class="cards-btn" href="#">Batafsil</a>
+			</div>
+
+			<div class="cards-box theme-tomato">
+				<h1 class="cards__title">
+					<img class="cards__img" src="{% static 'images/cards-5.png' %}" alt="card box">
+					Kassani nazorat <br>
+					qilish
+				</h1>
+				<ul class="cards__list">
+					<li class="cards__list-item">To‘lov turiga o‘tish</li>
+					<li class="cards__list-item">Kirim kassa jurnaliga o‘tish
+						o‘tish</li>
+					<li class="cards__list-item">Chiqim xarajat turiga o‘tish
+						olish</li>
+					<li class="cards__list-item">Chiqim kassa jurnaliga o‘tish ko‘rish</li>
+				</ul>
+				<a class="cards-btn" href="#">Batafsil</a>
+			</div>
+
+			<div class="cards-box theme-green">
+				<h1 class="cards__title">
+					<img class="cards__img" src="{% static 'images/cards-6.png' %}" alt="card box">
+					Hisobotlar <br>
+					bo‘limi
+				</h1>
+				<ul class="cards__list">
+					<li class="cards__list-item">Kunlik tayyor hisobotga o‘tish</li>
+					<li class="cards__list-item">Kelajak daromatlar smetasiga o‘tish</li>
+					<li class="cards__list-item">Kelajak xarajatlar smetasiga o‘tish</li>
+					<li class="cards__list-item">Oylik hisobot jurnalini ko‘rish</li>
+					<li class="cards__list-item">Yillik hisobot jurnalini ko‘rish</li>
+				</ul>
+				<a class="cards-btn" href="#">Batafsil</a>
+			</div>
+		</section>
+		</div>
+{% endblock %}
