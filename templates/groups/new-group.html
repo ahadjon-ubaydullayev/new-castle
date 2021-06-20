@@ -1,0 +1,240 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+			<div class="content-item">
+			<!-- title -->
+				<div class="build-title">
+					<h3 class="page-title">
+                    Yangi guruh jurnalini ochish va sozlash 
+					</h3>
+					<a class="enter" href="modal-group.html">Kiritish</a>
+				</div>
+				<div class="container">
+					<div class="build-search build-search_teacher">
+						<div class="build-top">
+							<div class="build-top__item">
+								<input type="text" name="build-search" placeholder="Search">
+								<img class="build-search__img" src="{% static 'images/search.svg'%}" alt="search">
+
+								<div class="filter">
+									<div class="filter-text">
+										<img class="filter-img" src="{% static 'images/filter.svg'%}" alt="filter-img">
+										Filter <img class="filter-arrow" src="{% static 'images/export-icon-2.svg'%}" alt="filter-arrow">
+									</div>
+									<ul class="filter-list">
+										<li class="filter-list__item">
+											<a href="#">Ijobiy aloqa</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">Salbiy aloqa</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">SMS aloqa</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">Faol o‘quvchilar</a>
+										</li>
+										<li class="filter-list__item">
+											<a href="#">Nofaol o‘quvchilar</a>
+										</li>
+                                        <li class="filter-list__item">
+											<a href="#">Guruhdan chiqarilgan</a>
+										</li>
+                                        <li class="filter-list__item">
+											<a href="#">Qora ro’yhatdagilar</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="build-top__item build-export__second">
+								<ul class="build-export">
+									<li class="build-export__item">Export</li>
+									<ul class="build-export__dropdown">
+										<li><a href="#"><img src="{% static 'images/word.svg'%}" alt="export icon">Word</a></li>	
+										<li><a href="#"><img src="{% static 'images/excel.svg'%}" alt="export icon">Excel</a></li>
+										<li><a href="#"><img src="{% static 'images/pdf.svg'%}" alt="export icon">Pdf</a></li>
+									</ul>
+								</ul>
+								<div class="build-export__number">
+									<span>Show</span> <input type="number" name="number" value="7">
+								</div>
+
+								<div class="categories">
+									Categories
+									<ul class="categories-list">
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-1">
+											<label for="cat-1">O‘qituvchi </label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-2">
+											<label for="cat-2">Hafta ichida dars kunlari</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-3">
+											<label for="cat-3">O‘qituvchi maqomi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-4">
+											<label for="cat-4">Xona biriktirish</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-5">
+											<label for="cat-5">Guruh uslubi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-6">
+											<label for="cat-6">Guruh turi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-7">
+											<label for="cat-7">Imtihon sanasi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-8">
+											<label for="cat-8">Dars soatlarini tanlash</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-9">
+											<label for="cat-9">Bir oyda darslar soni</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-10">
+											<label for="cat-10">Badal summasi</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<ul class="group-table build-table build-table--bold ">
+							<li class="build-table__item">
+								№
+							</li>
+							<li class="build-table__item">
+								Yangi guruhning restor raqami
+							</li>
+							<li class="build-table__item">
+								Asosiy hodim biriktirish
+							</li>
+							<li class="build-table__item">
+                                Bino va filial tanlash
+							</li>
+							<li class="build-table__item">
+								Birinchi dars boshlanish sanasi
+							</li>
+                            <li class="build-table__item">
+								O‘qituvchi
+							</li>
+							<li class="build-table__item">
+								Hafta ichida dars kunlari
+							</li>
+							<li class="build-table__item">
+								O‘qituvchi maqomi
+							</li>
+							<li class="build-table__item">
+								Xona  biriktirish
+							</li>
+							<li class="build-table__item">
+								Guruh usubi
+							</li>
+							<li class="build-table__item">
+								Guruh turi
+							</li>
+
+							<li class="build-table__item">
+								Imtihon sanasi
+							</li>
+							<li class="build-table__item">
+                                Dars soatlarinni tanlash
+							</li>
+							<li class="build-table__item">
+								Bir oyda darslar  soni
+							</li>
+							<li class="build-table__item">
+								Badal sunmmasi
+							</li>
+           
+                            <li class="build-table__item build-table__item--7">
+							</li>
+						</ul>
+					</div>
+					<!-- 
+						Jadval ro'yhati
+					-->
+				
+					<ul class="group-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							1
+						</li>
+						<li class="build-table__item">
+							<a href="{% url 'attendance'%}">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="{% url 'attendance'%}">Shojalilov Muzaffar Murtozahonovich</a>
+						</li>
+						<li class="build-table__item">
+							Marhamat bosh amliyot markazi
+						</li>
+						<li class="build-table__item">
+                            11.06.2021
+						</li>
+						<li class="build-table__item">
+							Qanahatov Izzatullo
+						</li>
+						<li class="build-table__item">
+							Dushanba
+						</li>
+						<li class="build-table__item">
+							Asosiy o‘qituvchi
+						</li>
+						<li class="build-table__item">
+							3,1 - xona
+						</li>
+
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Katta yoshdagilar
+						</li>
+						<li class="build-table__item">
+							16.02.2021
+						</li>
+						<li class="build-table__item">
+							16:00
+						</li>
+						<li class="build-table__item">
+                            12
+						</li>
+                        <li class="build-table__item">
+                            185000
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-group.html"><img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="pagination">
+						<!-- pagination chap ikonka -->
+						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg'%}" alt="pagination icon"></a></li>
+						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
+						<li><a class="pagination__item" href="#">2</a></li>
+						<li><a class="pagination__item" href="#">3</a></li>
+						<li><a class="pagination__item" href="#">4</a></li>
+						<li class="pagination__item pagination-more">...</li>
+						<!-- pagination o'ng ikonka -->
+						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg'%}" alt="pagination icon"></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+{% endblock %}

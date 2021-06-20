@@ -46,6 +46,16 @@ body{
   overflow-x: auto;
 }
 
+%center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+$blue: #429FFE;
+
+
 .page-title{
   font-weight: 600;
   line-height: 24px;
@@ -113,7 +123,61 @@ body{
   background: #555;
 }
 
-input[value],
-select{
-  color: grey
+
+
+.btn{
+  transition: all 0.3s;
+  padding: 12px 16px;
+  height: fit-content;
+  &-blue{
+    background: linear-gradient(91.68deg, #45A1FF 0%, #0176EE 100%), linear-gradient(137.64deg, #E8EFF4 0%, #E6ECF0 97.97%), #C4C4C4;
+    border-radius: 8px;
+    color: #fff;
+    border: none;
+  }
+  &-grey{
+    display: block;
+  }
+  &:hover{
+    opacity: 0.78;
+  }
+}
+
+.grey-box, .btn-grey{
+  background: #F6F6F6;
+  border: 1px solid #E2E3E3;
+  border-radius: 4px;
+  padding: 8px 30px;
+  @extend %center;
+  width: fit-content;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.journal{
+  img[src="images/desk-check.png"] ~ span{
+    color: #4CAF50;
+  }
+  img[src="images/table-icon-3.png"] ~ span{
+    color: #29B6F6;
+  }
+  img[src="images/journal-icon-2.png"] ~ span{
+    color: #EF4848;
+  }
+  img[src="images/journal-icon-9.png"] ~ span{
+    color: #0B3EC1;
+  }
+  img[src="images/journal-icon-8.png"] ~ span{
+    color: #59EBE2;
+  }
+  img[src="images/journal-icon-3.png"] ~ span{
+    color: #F325F7;
+  }
+  img[src="images/journal-icon-7.png"] ~ span{
+    color: #EDBB26;
+  }
+  img[src="images/table-icon-8.png"] ~ span{
+    color: #EF4848;
+  }
 }

@@ -318,7 +318,7 @@ def add_edit_building(form):
             building = Building.objects.get(id=form['id'])
             building.name = form['building-name']
             building.location = form['address']
-            building.room_amount = form['staff-amount']
+            building.room_amount = form['room-amount']
             building.nickname = form['nickname']
             building.added_time = form['added-time']
             building.save()
@@ -331,7 +331,7 @@ def add_edit_building(form):
             building = Building.objects.create(
                 name=form['building-name'],
                 location=form['address'],
-                room_amount=form['staff-amount'],
+                room_amount=form['room-amount'],
                 nickname=form['nickname'],
                 added_time=form['added-time'],
             )

@@ -1,0 +1,110 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+		<title>Attendance View</title>
+    <div id="modal" class="modal active modal-select">
+    <form action="#" class="modal-wrapper modal-wrapper_huge modal-wrapper-view modal-space" method="POST">
+      <div class="modal-inner modal-inner_view">
+        <h4 class="modal__title">Shahzod Ismoilov Farrux o‘g‘li</h4>
+        
+        <div class="view">
+          <div class="view__item">
+            <div class="view-box">
+              <div class="view-title">Ismi:</div>
+              <div class="view-info">Shahzod</div>
+            </div>
+            <div class="view-box">
+              <div class="view-title">To’plagan Smart cardlar:</div>
+              <div class="view-info view-info_icons">
+                <div class="journal-icon">
+                  <img src="{% static 'images/groups/journal-icon-4.png'%}" alt="journal-icon">
+                  <span>x5</span>
+                </div>
+                <div class="journal-icon">
+                  <img src="{% static 'images/groups/journal-icon-10.png'%}" alt="journal-icon">
+                  <span>x2</span>
+                </div>
+                <div class="journal-icon">
+                  <img src="{% static 'images/groups/journal-icon-10.png'%}" alt="journal-icon">
+                  <span>x2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="view__item">
+            <div class="view-box">
+              <div class="view-title">Familyasi:</div>
+              <div class="view-info">Ismoilov</div>
+            </div>
+            <div class="view-box">
+              <div class="view-title">To’plagan Warning cardlar:</div>
+              <div class="view-info view-info_icons">
+                <div class="journal-icon">
+                  <img src="{% static 'images/groups/journal-icon-12.png'%}" alt="journal-icon">
+                  <span>x7</span>
+                </div>
+                <div class="journal-icon">
+                  <img src="{% static 'images/groups/journal-icon-13.png'%}" alt="journal-icon">
+                  <span>x2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="view__item">
+            <div class="view-box">
+              <div class="view-title">ID-kodi:</div>
+              <div class="view-info">100007784</div>
+            </div>
+            <div class="view-box">
+              <div class="view-title">Smart cardlardan to’plagan ballari:</div>
+              <div class="view-info">33 ball</div>
+            </div>
+          </div>
+          <div class="view__item">
+            <div class="view-box">
+              <div class="view-title">Talabaning yoshi:</div>
+              <div class="view-info">36 yosh</div>
+            </div>
+            <div class="view-box">
+              <div class="view-title">Imtihonda olgan ballari:</div>
+              <div class="view-info">70 ball</div>
+            </div>
+          </div>
+          <div class="view__item">
+            <div class="view-box">
+              <div class="view-title">Qatnashgan darslar soni:</div>
+              <div class="view-info">10 ta</div>
+            </div>
+            <div class="view-box">
+              <div class="view-title">To‘lov uchun chegirma:</div>
+              <div class="view-info">15%</div>
+            </div>
+          </div>
+          <div class="view__item">
+            <div class="view-box">
+              <div class="view-title">Sababli qoldirilgan darslar soni:</div>
+              <div class="view-info">1 ta</div>
+            </div>
+            <div class="view-box">
+              <div class="view-title">Sababsiz qoldirilgan darslar soni:</div>
+              <div class="view-info">1 ta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="input-buttons input-export">
+        <div class="build-top__item build-export__second">
+          <ul class="build-export">
+            <li class="build-export__item">Export</li>
+            <ul class="build-export__dropdown">
+              <li><a href="#"><img src="{% static 'images/word.svg'%}" alt="export icon">Word</a></li>	
+              <li><a href="#"><img src="{% static 'images/excel.svg'%}" alt="export icon">Excel</a></li>
+              <li><a href="#"><img src="{% static 'images/pdf.svg'%}" alt="export icon">Pdf</a></li>
+            </ul>
+          </ul>
+        </div>
+          <a href="{% url 'attendance'%}" id="modal-close" class="input-btn">Ortga qaytish</a>
+        </div>
+    </form>
+    </div>
+		{% endblock %}

@@ -1,5 +1,5 @@
 {% extends 'home.html' %}
-{% load static %}
+{% load static %} 
 {% block tilie %}Dars soatlarini kiritish{% endblock %}
 {% block content %}
     <div id="modal" class="modal active modal-select">
@@ -16,7 +16,7 @@
                   {% for i in subject %}
                     <option value="{{ i.id }}">{{ i.name }}</option>
                   {% endfor %}
-                </select>
+                </select> 
             <a href="#" class="add-link">+ Yangi qo‘shish</a>
             </div>
             <div class="modal-select__box">

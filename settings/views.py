@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,  get_object_or_404
 from settings import servis_setting
 from django.http import JsonResponse, request
 from .models import *
@@ -108,12 +108,6 @@ def delete_time(request, id):
     time = Timetable.objects.get(id=id)
     time.delete()
     return redirect('/time')
-
-# def building(request):
-#     return render(request, "building.html")
-
-# def add_building(request):
-#     return render(request, "add_building.html")
 
 def other(request):
     if request.is_ajax and request.method == 'POST':
