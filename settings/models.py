@@ -3,6 +3,17 @@ from django.conf import settings
 from django.db.models.fields import DateField
 
 
+class TeacherRole(models.Model):
+    role = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.role
+
+    class Meta:
+        verbose_name = 'Teacher Role'
+        verbose_name_plural = 'Teacher Role'
+
+
 class Subjects(models.Model):
     name = models.CharField(max_length=60)
 
@@ -107,14 +118,17 @@ class Staff(models.Model):
     document_type = models.CharField(max_length=250)
     passport_id = models.CharField(max_length=250)
     id_card_number = models.CharField(max_length=25)
-    role = models.CharField(max_length=250)
-    workplace = models.CharField(max_length=250)
+    role = models.ForeignKey(TeacherRole, related_name='teacher_role', on_delete=models.CASCADE)
+    workplace = models.ForeignKey(Building, related_name='workplace', on_delete=models.CASCADE)
     login = models.CharField(max_length=250)
     password = models.CharField(max_length=250)
 
+    def __str__(self):
+        return self.first_name + self.middle_name + self.last_name
+
     class Meta:
-        verbose_name = 'staff'
-        verbose_name_plural = 'staff'
+        verbose_name = 'Teacher'
+        verbose_name_plural = 'Teachers'
 
 
 class Other(models.Model):
@@ -142,6 +156,9 @@ class Room(models.Model):
     room_number = models.CharField(max_length=30)
     room_type = models.ForeignKey(RoomType, related_name='room_type', on_delete=models.CASCADE)
     owner = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.room_number
     
 
 class Student(models.Model):

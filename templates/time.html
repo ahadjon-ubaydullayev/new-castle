@@ -13,7 +13,8 @@
 					<div class="build-search">
 						<div class="build-top">
 							<div class="build-top__item">
-								<input type="text" name="build-search" placeholder="Search">
+								<i id="search-icon" class="fas fa-search" aria-hidden="true"></i>
+								<input type="text" id="search-text" name="build-search" placeholder="Search">
 								<img class="build-search__img" src="{% static 'images/search.svg' %}" alt="search">
 							</div>
 							<div class="build-top__item build-export__second">
@@ -55,62 +56,17 @@
 							</li>
 						</ul>
 					</div>
-					{% for i in time %}
-					<ul class="time-table build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-                            {{ i.id }}
-						</li>
-						<li class="build-table__item build-table__item--2">
-                            {{ i.subject_name }}
-						</li>
-						<li class="build-table__item build-table__item--3">
-                            {{ i.lesson_type }}
-						</li>
-						<li class="build-table__item build-table__item--4">
-                            {{ i.lesson_pattern }}
-						</li>
-						<li class="build-table__item build-table__item--5">
-                            {{ i.group_type }}
-						</li>
-						<li class="build-table__item build-table__item--6">
-                            {{ i.start_time | time:"H:i" }}
-						</li>
-                        <li class="build-table__item build-table__item--6">
-                            {{ i.finish_time | time:"H:i" }}
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<a href="{% url "time" %}?id={{ i.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-										Taxrirlash</a>
-								</li>
-								<li class="build-table__dropdown-item">
-									<a href="{% url "time" %}{{ i.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-                                        O‘chirish</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-                    {% endfor %}
-					<ul class="pagination">
-						<!-- pagination chap ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg' %}" alt="pagination icon"></a></li>
-						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
-						<li><a class="pagination__item" href="#">2</a></li>
-						<li><a class="pagination__item" href="#">3</a></li>
-						<li><a class="pagination__item" href="#">4</a></li>
-						<li class="pagination__item pagination-more">...</li>
-						<!-- pagination o'ng ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg' %}" alt="pagination icon"></li></a>
-					</ul>
+					<div id="replaceable-content" class="col-6">
+						{% include "settings/search/time-results.html" %}
+					</div>
+					
 				</div>
 			</div>
-
     <script>
     function addTime() {
       window.location.href = '{% url "time" %}?add=true';
     }
-
     </script>
+	<script src="{% static 'js/time_search.js' %}"></script>
 {% endblock %}
 		

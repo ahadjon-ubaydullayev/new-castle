@@ -1,6 +1,11 @@
 from django.contrib import admin
 from .models import Timetable, UserProfile, Building, Salary, Staff, Other, Room, Student, Subjects
-from .models import LessonType, Group, Patterns, RoomType
+from .models import LessonType, Group, Patterns, RoomType, TeacherRole
+
+
+@admin.register(TeacherRole)
+class TeacherRoleAdmin(admin.ModelAdmin):
+    list_display = ['role']
 
 
 @admin.register(Patterns)
@@ -62,6 +67,7 @@ class SalaryAdmin(admin.ModelAdmin):
         'subject_name', 'lesson_pattern', 'lesson_type', 
         'group_type', 'month_amount', 'monthly_fee',
         ]
+    #order_by attribute should be added
 
 
 @admin.register(Staff)

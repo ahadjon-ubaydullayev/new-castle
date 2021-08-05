@@ -61,7 +61,7 @@ def delete_time(form):
     else:
         result['success'] = False
         result['error'] = 'Object not found!'
-    return result
+    return result 
 
 
 def add_edit_salary(form):
@@ -248,10 +248,10 @@ def add_edit_student(form):
             student.id_number = form['id-number'] #passport
             student.id_card_number = form['id-card-number']
             student.level = form['level']
-            student.free_time = form['leson-time']
+            student.free_time = form['lesson-time']
             student.address = form['address']
             student.building_name = building_name
-            student.tel_number = form['tel-number']
+            student.tel_number = form['tel']
             student.student_login = form['login']
             student.student_password = form['password']
             student.status = True
@@ -279,7 +279,7 @@ def add_edit_student(form):
                 level=form['level'],
                 free_time=form['lesson-time'],
                 address=form['address'],
-                tel_number=form['tel-number'],
+                tel_number=form['tel'],
                 student_login=form['login'],
                 student_password=form['password'],
                 status=True,

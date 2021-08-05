@@ -116,10 +116,10 @@
           <label for="building">Filial va o‘quv binoni tanlash</label>
           <select id="building" class="modal-input" name="building">
           {% for b in building %}
-            <option>{{ b.name }}</option>
+            <option value="{{ b.id }}">{{ b.name }}</option>
           {% endfor %}
           </select>
-        </div>
+        </div> 
         <div class="modal-select__box">
           <label for="captcha">Rasmdagi matnni kiriting</label>
           <div class="captcha">

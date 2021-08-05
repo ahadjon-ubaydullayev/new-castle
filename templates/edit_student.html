@@ -16,11 +16,12 @@
           </div>
           <div class="modal-select__box">
             <label for="birthday">Tug’ilgan sanasi</label>
-            <input id="birthday" class="modal-input" value="{{ students.born_date}}" type="date" name="birth-date" value="2020-01-22">
+            <input id="birthday" class="modal-input" value="{{ students.born_date}}" name="born-date">
           </div>
            <div class="modal-select__box">
             <label>Shaxsni tasdiqlovchi hujjat turi</label>
             <div class="radio" style="grid-template-columns: 0.3fr 0.7fr 0.3fr 0.7fr 0.3fr 0.7fr;">
+             <option selected value="{{ students.document_type }}">{{ students.document_type }}</option>
               <input type="radio" name="document-type" id="pass" value="Passport">
               <label for="pass">Passport</label>
               <input type="radio" name="document-type" id="metrika" value="Metrka">
@@ -37,7 +38,7 @@
           </div>
           <div class="modal-select__box">
             <label for="app-date">Ro‘yhatdan o‘tgan sana</label>
-            <input id="app-date" class="modal-input" value="{{ students.register_date}}" type="date" name="register-date" value="2020-01-22">
+            <input id="app-date" class="modal-input" value="{{ students.register_date }}" name="register-date">
           </div>
           <div class="modal-select__box">
             <label for="passport">Passport seriyasi va raqami</label>
@@ -66,7 +67,7 @@
           <div class="modal-select__box">
             <label for="gender">Jinsi</label>
             <select id="gender" class="modal-input" name="gender">
-             <option selected value="{{ students.gender.id }}">{{ students.gender }}</option>
+             <option selected value="{{ students.gender }}">{{ students.gender }}</option>
               <option value="Erkak">Erkak</option>
               <option value="Ayol">Ayol</option>
             </select>
@@ -80,7 +81,7 @@
             <div class="modal-passport">
               <input id="app-time" type="text" class="modal-input" placeholder="08:00">
               <select class="modal-input" name="lesson-time">
-               <option selected value="{{ students.free_time.id }}">{{ students.free_time }}</option>
+               <option selected value="{{ students.free_time}}">{{ students.free_time }}</option>
                 <option>Dushanba</option>
                 <option>Seshanba</option>
                 <option>Chorshanba</option>
@@ -103,7 +104,7 @@
           </div>
           <div class="modal-select__box">
             <label for="tel">Telefon raqamlari</label>
-            <input type="tel" class="modal-input" value="{{ students.tel_number }}" name="tel-number" id="tel" placeholder="+99893 123 45 67">
+            <input type="tel" class="modal-input" value="{{ students.tel_number }}" name="tel" id="tel" placeholder="+99893 123 45 67">
           </div>
         </div>
   
@@ -120,10 +121,10 @@
           <select id="building" class="modal-input" name="building">
            <option selected value="{{ students.building_name.id }}">{{ students.building_name }}</option>
           {% for b in building %}
-            <option>{{ b.name }}</option>
+            <option value="b.id">{{ b.name }}</option>
           {% endfor %}
           </select>
-        </div>
+        </div> 
         <div class="modal-select__box">
           <label for="captcha">Rasmdagi matnni kiriting</label>
           <div class="captcha">

@@ -1,0 +1,84 @@
+{% load static %}
+{% if students %}
+    {% for s in page_obj %}
+					<ul class="student-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							{{s.id}}
+						</li>
+						<li class="build-table__item">
+							{{ s.first_name }} {{ s.middle_name}} {{ s.last_name}}
+						</li>
+						<li class="build-table__item">
+							{{s.id_code}}
+						</li>
+						<li class="build-table__item">
+							{{s.register_date}}
+						</li>
+						<li class="build-table__item">
+							{{s.born_date}}
+						</li>
+						<li class="build-table__item">
+							{{s.student_age}}
+						</li>
+						<li class="build-table__item">
+							{{s.document_type}}
+						</li>
+						<li class="build-table__item">
+							{{s.id_number}}
+						</li>
+						<li class="build-table__item">
+							{{s.level}}
+						</li>
+						<li class="build-table__item">
+							{{s.free_time}}
+						</li>
+						<li class="build-table__item">
+							{{s.age_level}}
+						</li>
+						<li class="build-table__item">
+							{{s.address}}
+						</li>
+						<li class="build-table__item">
+							{{s.building_name}}
+						</li>
+						<li class="build-table__item">
+							<div>{{s.tel_number}}</div>
+							<div></div>
+						</li>
+						<li class="build-table__item">
+							{{s.student_login}}
+						</li>
+						<li class="build-table__item">
+							{{s.student_password}}
+						</li>
+						<li class="build-table__item">
+							{{s.status}}
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="{% url "students" %}?id={{ s.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
+										Taxrirlash</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<a href="{% url "students" %}{{ s.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
+                                        O‘chirish</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					{% endfor %}
+          			<ul class="pagination">
+						{% if page_obj.has_previous %}	
+							<li><a class="pagination__item" href="?page={{ page_obj.previous_page_number }}"><img src="{% static 'images/pagination-arrow-left.svg' %}" alt="pagination icon"></a></li>
+							<li><a class="pagination__item" href="?page=1">1</a></li>	
+						{% endif %}							
+							<li><a class="pagination__item pagination__item--active" href="#">{{ page_obj.number }}</a></li>						
+						{% if page_obj.has_next %}
+							<li><a class="pagination__item" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+							<li><a class="pagination__item" href="?page={{ page_obj.next_page_number }}"><img src="{% static 'images/pagination-arrow-right.svg' %}" alt="pagination icon"></li></a>
+						{% endif %}
+					</ul>
+{% else %}
+<h3 class="page-title">No results found</h3>
+{% endif %}

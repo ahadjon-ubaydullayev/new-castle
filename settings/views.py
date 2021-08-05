@@ -1,7 +1,12 @@
+from django.core import paginator
 from django.shortcuts import render, redirect,  get_object_or_404
 from settings import servis_setting
 from django.http import JsonResponse, request
 from .models import *
+from django.core.paginator import Paginator
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+
 
 def home(request):
     return render(request, 'home.html')
@@ -57,13 +62,33 @@ def salary(request):
             }
             return render(request, 'edit_salary.html', context=context)
         else:
-            salary = Salary.objects.all()
-            return render(request, 'salary.html', {'salary': salary})
+            ctx = {}
+            url_parameter = request.GET.get("q")
+
+            if url_parameter:
+                salary = Salary.objects.filter(subject_name__name__icontains=url_parameter)
+            else:
+                salary = Salary.objects.all()
+            paginator = Paginator(salary, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number) 
+            ctx = {
+                'salary':salary, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/salary-results.html", context={'salary':salary, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+            return render(request, 'salary.html', context=ctx)
 
 def delete_salary(request, id):
     salary = Salary.objects.get(id=id)
     salary.delete()
     return redirect('/salary')
+
 
 def times(request):
     if request.is_ajax and request.method == 'POST':
@@ -101,8 +126,30 @@ def times(request):
             }
             return render(request, 'edit_time.html', context=context)
         else:
-            time = Timetable.objects.all()
-            return render(request, 'time.html', {'time': time})
+            ctx = {}
+            url_parameter = request.GET.get("q")
+
+            if url_parameter:
+                time = Timetable.objects.filter(subject_name__name__icontains=url_parameter)
+            else:
+                time = Timetable.objects.all()
+            paginator = Paginator(time, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+
+            
+            ctx = {
+                'time':time, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/time-results.html", context={'time':time, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+
+            return render(request, 'time.html', context=ctx)
 
 def delete_time(request, id):
     time = Timetable.objects.get(id=id)
@@ -137,8 +184,29 @@ def other(request):
             }
             return render(request, 'edit_other.html', context=context)
         else:
-            others = Other.objects.all()
-            return render(request, 'other.html', {'others': others})
+            ctx = {}
+            url_parameter = request.GET.get("q")
+
+            if url_parameter:
+                other = Other.objects.filter(subject_name__name__icontains=url_parameter)
+            else:
+                other = Other.objects.all()
+            paginator = Paginator(other, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+
+            
+            ctx = {
+                'other':other, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/other-results.html", context={'other':other, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+            return render(request, 'other.html', context=ctx)
 
 def delete_other(request, id):
     other = Other.objects.get(id=id)
@@ -173,8 +241,27 @@ def room(request):
             }
             return render(request, 'edit_room.html', context=context)
         else:
-            room = Room.objects.all()
-            return render(request, 'room.html', {'room': room})
+            ctx = {}
+            url_parameter = request.GET.get("q")
+
+            if url_parameter:
+                room = Room.objects.filter(building_name__name__icontains=url_parameter)
+            else:
+                room = Room.objects.all()
+            paginator = Paginator(room, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            ctx = {
+                'room':room, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/room-results.html", context={'room':room, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+            return render(request, 'room.html', context=ctx)
 
 def delete_room(request, id):
     room = Room.objects.get(id=id)
@@ -205,13 +292,32 @@ def students(request):
             }
             return render(request, 'edit_student.html', context=context)
         else:
-            student = Student.objects.all()
-            return render(request, 'student.html', {'student': student})
+            ctx = {}
+            url_parameter = request.GET.get("q")
+
+            if url_parameter:
+                students = Student.objects.filter(first_name__icontains=url_parameter)
+            else:
+                students = Student.objects.all()
+            paginator = Paginator(students, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            ctx = {
+                'students':students, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/students-results.html", context={'students':students, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+            return render(request, 'student.html', context=ctx)
 
 def delete_student(request, id):
     student = Student.objects.get(id=id)
     student.delete()
-    return redirect('/student')
+    return redirect('/students')
 
 def building(request):
     if request.is_ajax and request.method == 'POST':
@@ -231,10 +337,32 @@ def building(request):
             }
             return render(request, 'edit_building.html', context=context)
         else:
-            building = Building.objects.all()
-            return render(request, 'building.html', {'building': building})
+            ctx = {}
+            url_parameter = request.GET.get("q")
+
+            if url_parameter:
+                buildings = Building.objects.filter(name__icontains=url_parameter)
+            else:
+                buildings = Building.objects.all()
+            paginator = Paginator(buildings, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            ctx = {
+                'buildings':buildings, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/building-results.html", context={'buildings':buildings, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+
+            return render(request, 'building.html', context=ctx)
 
 def delete_building(request, id):
     building = Building.objects.get(id=id)
     building.delete()
     return redirect('/building')
+
+

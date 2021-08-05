@@ -8,14 +8,13 @@
 						Bino va Filiallar
 					</h3>
 					<a class="enter"  onclick="addBuilding()">Kiritish</a>
-					{% comment %} <a class="enter" href="{% url 'add_building'%}">Kiritish</a> {% endcomment %}
 				</div>
 				<div class="container">
 					<div class="build-search">
 						<div class="build-top">
 							<div class="build-top__item">
-								<input type="text" name="build-search" placeholder="Search">
-								<img class="build-search__img" src="{% static 'images/search.svg'%}" alt="search">
+								<input type="text" id="search-text" name="build-search" placeholder="Search">
+								<img class="build-search__img" id="search-icon" src="{% static 'images/search.svg'%}" alt="search">
 							</div>
 							<div class="build-top__item build-export__second">
 								<ul class="build-export">
@@ -57,57 +56,16 @@
 					<!-- 
 						Jadval ro'yhati
 					-->
-					{% for b in building %}
-					<ul class="building build-table build-table--light">
-						<li class="build-table__item build-table__item--1">
-							{{b.id}}
-						</li>
-						<li class="build-table__item build-table__item--2">
-							{{ b.name }}
-						</li>
-						<li class="build-table__item build-table__item--3">
-							{{ b.location }}
-						</li>
-						<li class="build-table__item build-table__item--4">
-							{{ b.room_amount }}
-						</li>
-						<li class="build-table__item build-table__item--5">
-							{{ b.nickname }}
-						</li>
-						<li class="build-table__item build-table__item--6">
-							{{ b.added_time }}
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<a href="{% url "building" %}?id={{ b.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-										Taxrirlash</a>
-								</li>
-								<li class="build-table__dropdown-item">
-									<a href="{% url "building" %}{{ b.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-                                        O‘chirish</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					{% endfor %}
-					<ul class="pagination">
-						<!-- pagination chap ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg'%}" alt="pagination icon"></a></li>
-						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
-						<li><a class="pagination__item" href="#">2</a></li>
-						<li><a class="pagination__item" href="#">3</a></li>
-						<li><a class="pagination__item" href="#">4</a></li>
-						<li class="pagination__item pagination-more">...</li>
-						<!-- pagination o'ng ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg'%}" alt="pagination icon"></li></a>
-					</ul>
+					<div id="replaceable-content" class="col-6">
+						{% include "settings/search/building-results.html" %}
+					</div>
 				</div>
 			</div>
-		<script>
+<script>
     function addBuilding() {
       window.location.href = '{% url "building" %}?add=true';
     }
+</script>
 
-    </script>
+<script src="{% static 'js/main.js' %}"></script>
 {% endblock %}

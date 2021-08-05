@@ -14,16 +14,17 @@
 					<div class="build-search">
 						<div class="build-top">
 							<div class="build-top__item">
-								<input type="text" name="build-search" placeholder="Search">
+								<i id="search-icon" class="fas fa-search" aria-hidden="true"></i>
+								<input type="text" id="search-text" name="build-search" placeholder="Search">
 								<img class="build-search__img" src="{% static 'images/search.svg'%}" alt="search">
 							</div>
 							<div class="build-top__item build-export__second">
 								<ul class="build-export">
 									<li class="build-export__item">Export</li>
 									<ul class="build-export__dropdown">
-										<li><a href="#"><img src="images/word.svg" alt="export icon">Word</a></li>	
-										<li><a href="#"><img src="images/excel.svg" alt="export icon">Excel</a></li>
-										<li><a href="#"><img src="images/pdf.svg" alt="export icon">Pdf</a></li>
+										<li><a href="#"><img src="{% static 'images/word.svg'%}" alt="export icon">Word</a></li>	
+										<li><a href="#"><img src="{% static 'images/excel.svg'%}" alt="export icon">Excel</a></li>
+										<li><a href="#"><img src="{% static 'images/pdf.svg'%}" alt="export icon">Pdf</a></li>
 									</ul>
 								</ul>
 								<div class="build-export__number">
@@ -60,54 +61,9 @@
 					<!-- 
 						Jadval ro'yhati
 					-->
-					{% for d in others %}
-					<ul class="other-table build-table build-table--light build-table__item">
-						<li class="build-table__item build-table__item--1">
-							{{d.id}}
-						</li>
-						<li class="build-table__item build-table__item--2">
-							{{d.subject_name}}
-						</li>
-						<li class="build-table__item build-table__item--3">
-							{{d.lesson_pattern}}
-						</li>
-						<li class="build-table__item build-table__item--4">
-							{{d.weekly_plan}}
-						</li>
-						<li class="build-table__item build-table__item--5">
-							{{d.monthly_plan}}
-						</li>
-						<li class="build-table__item build-table__item--6">
-							{{d.total_lessons}}
-						</li>
-            			<li class="build-table__item build-table__item--6">
-							{{d.course_duration}}
-						</li>
-						<li class="build-table__item build-table__item--7">
-							<ul class="build-table__dropdown">
-								<li class="build-table__dropdown-item btn-edit">
-									<a href="{% url "other" %}?id={{ d.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-										Taxrirlash</a>
-								</li>
-								<li class="build-table__dropdown-item">
-									<a href="{% url "other" %}{{ d.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-                                        O‘chirish</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					{% endfor %}
-					<ul class="pagination">
-						<!-- pagination chap ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-left.svg'%}" alt="pagination icon"></a></li>
-						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
-						<li><a class="pagination__item" href="#">2</a></li>
-						<li><a class="pagination__item" href="#">3</a></li>
-						<li><a class="pagination__item" href="#">4</a></li>
-						<li class="pagination__item pagination-more">...</li>
-						<!-- pagination o'ng ikonka -->
-						<li><a class="pagination__item" href="#"><img src="{% static 'images/pagination-arrow-right.svg'%}" alt="pagination icon"></li></a>
-					</ul>
+					<div id="replaceable-content" class="col-6">
+						{% include "settings/search/other-results.html" %}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -115,7 +71,7 @@
     function addOther() {
       window.location.href = '{% url "other" %}?add=true';
     }
-
     </script>
+<script src="{% static 'js/other_search.js' %}"></script>	
 
-		{% endblock %}
+{% endblock %}
