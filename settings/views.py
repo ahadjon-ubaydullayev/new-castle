@@ -21,10 +21,48 @@ def config(request):
     return render(request, 'config.html')
 
 def teachers(request):
-    return render(request, 'teacher.html')
+    if request.is_ajax and request.method == 'POST':
+        print(request.POST)
+        if request.POST['action'] == 'add':
+            servis_setting.add_edit_teacher(request.POST)
+            return redirect('/teachers')
+        elif request.POST['action'] == 'delete':
+            response = servis_setting.delete_teacher(request.POST)
+            return JsonResponse(response, status=200, safe=False)
+    if request.method == 'GET':
+        if 'add' in request.GET:
+            
+            return render(request, 'add_teacher.html')
+        elif 'id' in request.GET:
+           
+            context = {
+                
+                'teachers': servis_setting.get_teacher(request.GET['id']),
+            }
+            return render(request, 'edit_teacher.html', context=context)
+        else:
+            ctx = {}
+            url_parameter = request.GET.get("q")
 
-def teacher_add(request):
-    return render(request, 'add_teacher.html')
+            if url_parameter:
+                teacher = TeacherTypes.objects.filter(rank__name__icontains=url_parameter)
+            else:
+                teacher = TeacherTypes.objects.all()
+            paginator = Paginator(teacher, 5)
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number) 
+            ctx = {
+                'teacher':teacher, 'page_obj':page_obj,
+            }
+            if request.is_ajax():
+
+                html = render_to_string(
+                    template_name="settings/search/teacher-results.html", context={'teacher':teacher, 'page_obj':page_obj,}
+                )
+                data_dict = {"html_from_view": html}
+                return JsonResponse(data=data_dict, safe=False)
+            return render(request, 'teacher.html', context=ctx)
+
 
 def salary(request):
     if request.is_ajax and request.method == 'POST':

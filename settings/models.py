@@ -182,5 +182,13 @@ class Student(models.Model):
     status = models.BooleanField(default=True)
     gender = models.CharField(max_length=20)
     
-    
-    
+
+class TeacherTypes(models.Model):
+    teacher_rank = models.CharField(max_length = 150)
+    role = models.CharField(max_length=150)
+    employees = models.CharField(max_length=150)
+    added_time = models.DateField()
+
+    class Meta:
+        verbose_name = 'Teacher type'
+        verbose_name_plural = 'Teacher types'

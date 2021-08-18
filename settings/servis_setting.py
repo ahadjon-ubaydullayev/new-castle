@@ -64,6 +64,37 @@ def delete_time(form):
     return result 
 
 
+def add_edit_teacher(form):
+    result = {}
+    if 'id' in form:
+        try:
+            print(type(form))
+            teacher = TeacherTypes.objects.get(id=form['id'])
+            teacher.teacher_rank = form['position']
+            teacher.role = form['vakolat']
+            teacher.employees = form['staff-number']
+            teacher.added_time = form['date']
+            teacher.save()
+            result['success'] = True
+        except Exception as e:
+            result['success'] = False
+            result['error'] = str(e)
+    else:
+        try:
+            teacher = TeacherTypes.objects.create(
+            teacher_rank = form['position'],
+            role = form['vakolat'],
+            employees = form['staff-number'],
+            added_time = form['date'],
+            )
+            teacher.save()
+            result['success'] = True
+        except Exception as e:
+            result['success'] = False
+            result['error'] = str(e)
+    return result
+
+
 def add_edit_salary(form):
     result = {}
     if 'id' in form:

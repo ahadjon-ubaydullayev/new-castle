@@ -20,4 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('settings.urls')),
     path('', include('groups.urls')),
+    path('', include('register.urls')),
+    path('', include('group_management.urls')),
+
+
 ]

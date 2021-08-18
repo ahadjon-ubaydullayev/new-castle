@@ -1,11 +1,16 @@
 from django.contrib import admin
 from .models import Timetable, UserProfile, Building, Salary, Staff, Other, Room, Student, Subjects
-from .models import LessonType, Group, Patterns, RoomType, TeacherRole
+from .models import LessonType, Group, Patterns, RoomType, TeacherRole, TeacherTypes
 
 
 @admin.register(TeacherRole)
 class TeacherRoleAdmin(admin.ModelAdmin):
     list_display = ['role']
+
+
+@admin.register(TeacherTypes)
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ['teacher_rank', 'role', 'employees', 'added_time']
 
 
 @admin.register(Patterns)

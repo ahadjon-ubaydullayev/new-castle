@@ -1,0 +1,793 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+			<div class="content-item">
+			<!-- title -->
+				<div class="build-title">
+					<h3 class="page-title">
+						Tugatilgan va yopilgan guruhlarning arxiv jurnali
+					</h3>
+                    
+				</div>
+				<div class="container">
+                    <div class="subject-box">
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Ingliz tili fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Matematika fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Mental arifmetika fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Nemis tili fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Rus tili fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Ona tili fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Mnemonika fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                        <div class="subject-box__item">
+                            <h4 class="subject-box__title">Koreys tili fanidan 30</h4>
+                            <h6 class="subject-box__info">
+                                <div class="subject-item">Asosiy darslar 15</div>
+                                <div class="subject-item">Video darslar 15</div>
+                            </h6>
+                        </div>
+                    </div>
+					<div class="build-search build-search_teacher">
+						<div class="build-top">
+							<div class="build-top__item">
+								<input type="text" name="build-search" placeholder="Search">
+								<img class="build-search__img" src="images/search.svg" alt="search">
+							</div>
+							
+							<div class="build-top__item build-export__second">
+								<ul class="build-export">
+									<li class="build-export__item">Export</li>
+									<ul class="build-export__dropdown">
+										<li><a href="#"><img src="images/word.svg" alt="export icon">Word</a></li>	
+										<li><a href="#"><img src="images/excel.svg" alt="export icon">Excel</a></li>
+										<li><a href="#"><img src="images/pdf.svg" alt="export icon">Pdf</a></li>
+									</ul>
+								</ul>
+								<div class="build-export__number">
+									<span>Show</span> <input type="number" name="number" value="7">
+								</div>
+
+								<div class="categories">
+									Categories
+									<ul class="categories-list">
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-1">
+											<label for="cat-1">Guruhning 
+                                                restor raqami</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-2">
+											<label for="cat-2">O‘qituvchining ismi 
+                                                va maqomi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-3">
+											<label for="cat-3">Dars o‘tiladigan 
+                                                hafta kuni va soat</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-4">
+											<label for="cat-4">Guruhning 
+                                                turi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-13">
+											<label for="cat-13">Guruhning 
+                                                uslubi</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-5">
+											<label for="cat-5">Qaysi 
+                                                fandan</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-6">
+											<label for="cat-6">Bino va filial hamda 
+                                                dars xona raqami</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-7">
+											<label for="cat-7">Birinchi dars
+                                                boshlangan sana</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-8">
+											<label for="cat-8">Tugatilgan va
+                                                yopilgan sana</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-9">
+											<label for="cat-9">O‘quvchilar 
+                                                soni</label>
+										</li>
+										<li class="categories-list__item">
+											<input type="checkbox" name="category" id="cat-10">
+											<label for="cat-10">Tugatilgan va yopilgan
+                                                guruhlarga sabablar</label>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<ul class="archieve-table build-table build-table--bold ">
+							<li class="build-table__item">
+								№
+							</li>
+							<li class="build-table__item">
+								Guruhning restor raqami
+							</li>
+							<li class="build-table__item">
+								O‘qituvchining ismi va maqomi
+							</li>
+							<li class="build-table__item">
+								Dars o‘tiladigan  hafta kuni va soat
+							</li>
+							<li class="build-table__item">
+								Guruhning  turi
+							</li>
+							<li class="build-table__item">
+								Guruhning  uslubi
+							</li>
+							<li class="build-table__item">
+								Qaysi  fandan
+							</li>
+							<li class="build-table__item">
+								Bino va filial hamda  dars xona raqami
+							</li>
+							<li class="build-table__item">
+								Birinchi dars boshlangan sana
+							</li>
+							<li class="build-table__item">
+								Tugatilgan va yopilgan sana
+							</li>
+
+							<li class="build-table__item">
+								O‘quvchilar  soni
+							</li>
+							<li class="build-table__item">
+								Tugatilgan va yopilgan guruhlarga sabablar
+							</li>
+							
+                            <li class="build-table__item build-table__item--7">
+							</li>
+						</ul>
+					</div>
+					<!-- 
+						Jadval ro'yhati
+					-->
+					<ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							1
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							2
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							3
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							4
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							5
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							6
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							7
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							8
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							9
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+                    <ul class="archieve-table build-table build-table--light build-table__item">
+						<li class="build-table__item">
+							10
+						</li>
+						<li class="build-table__item">
+							<a href="view-info.html">G - 00387</a>
+						</li>
+						<li class="build-table__item">
+							<a href="view-archieve.html">Muhammad Siddiq Main teacher</a>
+						</li>
+						<li class="build-table__item">
+							Monday
+14:00
+						</li>
+						<li class="build-table__item">
+							Adults
+						</li>
+						<li class="build-table__item">
+							Innovation
+						</li>
+						<li class="build-table__item">
+							Ingliz tili
+						</li>
+						<li class="build-table__item">
+							Bosh bino
+1.4-xona
+						</li>
+						<li class="build-table__item">
+							26.03.2021
+Juma
+						</li>
+
+						<li class="build-table__item">
+							08.03.2021
+Dushanba
+						</li>
+						<li class="build-table__item">
+							15 ta
+						</li>
+						<li class="build-table__item">
+							Belgilangan 12 ta dars
+soati tugatildi
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="modal-teacher.html">
+										<img src="images/dropdown-edit.svg" alt="dropdown icon">
+									Taxrirlash
+									</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<img src="images/dropdown-delete.svg" alt="dropdown icon">
+									O‘chirish
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="pagination">
+						<!-- pagination chap ikonka -->
+						<li><a class="pagination__item" href="#"><img src="images/pagination-arrow-left.svg" alt="pagination icon"></a></li>
+						<li><a class="pagination__item pagination__item--active" href="#">1</a></li>
+						<li><a class="pagination__item" href="#">2</a></li>
+						<li><a class="pagination__item" href="#">3</a></li>
+						<li><a class="pagination__item" href="#">4</a></li>
+						<li class="pagination__item pagination-more">...</li>
+						<!-- pagination o'ng ikonka -->
+						<li><a class="pagination__item" href="#"><img src="images/pagination-arrow-right.svg" alt="pagination icon"></li></a>
+					</ul>
+				</div>
+			</div>
+		</div>
+{% endblock %}

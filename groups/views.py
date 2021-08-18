@@ -90,3 +90,9 @@ def attendance(request):
 
 def view_attendance(request):
     return render(request, 'groups/view-attendance.html')
+
+def active_group(request):
+    return render(request, 'groups/group-now.html')
+
+def ended_group(request):
+    return render(request, 'groups/ended-group.html')

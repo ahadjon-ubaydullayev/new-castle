@@ -15,21 +15,23 @@
 					<img class="config-img" src="{% static 'images/groups/group-1.png'%}" alt="config img">
 				</a>
 
+
+{% comment %} this part is not available {% endcomment %}
 				<a class="config-box" href="group-add.html">
 					<h4 class="config-title">
 						Qo‘shimcha guruh tashkil qilish va uni sozlash
 					</h4>
 					<img class="config-img" src="{% static 'images/groups/group-2.png'%}" alt="config img">
 				</a>
-				<a class="config-box" href="group-journal.html">
+				<a class="config-box" href="{% url 'active-group'%}">
 					<h4 class="config-title">
-						Amaldagi faol guruhlar jurnaliga o‘tish
+						Amaldagi faol guruhlar jurnaliga o‘tish 
 					</h4>
 					<img class="config-img" src="{% static 'images/groups/group-3.png'%}" alt="config img">
 				</a>
-				<a class="config-box" href="group-end.html">
+				<a class="config-box" href="{% url 'ended-group'%}">
 					<h4 class="config-title">
-						Tugatilgan yopilgan guruhlar jurnaliga o‘tish
+						Tugatilgan va yopilgan guruhlar jurnaliga o‘tish
 					</h4>
 					<img class="config-img" src="{% static 'images/groups/group-4.png'%}" alt="config img">
 				</a>
