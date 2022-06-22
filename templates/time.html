@@ -1,15 +1,15 @@
 {% extends 'home.html' %}
 {% load static %}
 {% block content %}
-			<div class="content-item">
+			<div class="container-lg content-item container-fluid ">
 			<!-- title -->
 				<div class="build-title">
 					<h3 class="page-title">
-						Dars soatlarini kiritish va uni jurnali
+						Entering timetables
 					</h3>
-                    <a class="enter" onclick="addTime()">Kiritish</a>
+       		<button type="button" class="btn btn-primary"> <a onclick="addTime()">Add +</a></button>
 				</div>
-				<div class="container">
+				<div class="  container-lg container">
 					<div class="build-search">
 						<div class="build-top">
 							<div class="build-top__item">
@@ -32,31 +32,32 @@
 								</div>
 							</div>
 						</div>
-						<ul class="time-table build-table build-table--bold ">
-							<li class="build-table__item build-table__item--1">
+					
+						<ul class="time-table build-table build-table--bold table table-primary">
+							<li class="build-table__item build-table__item--1" scope="col">
 								№
 							</li>
-							<li class="build-table__item build-table__item--2">
-								O‘tiladigan fanlar nomi
+							<li scope="col" class="build-table__item build-table__item--2">
+								Subject name
 							</li>
 							<li class="build-table__item build-table__item--3">
-								Dars uslubi
+								Lesson pattern
 							</li>
 							<li class="build-table__item build-table__item--4">
-								Dars turlari
+								Lesson type
 							</li>
 							<li class="build-table__item build-table__item--5">
-								Dars guruhlar turlari
+								Group type
 							</li>
 							<li class="build-table__item build-table__item--6">
-								Dars boshlanish vaqti
+								Starting time
 							</li>
 							<li class="build-table__item build-table__item--7">
-								Dars tugash vaqti
+								Finishing time
 							</li>
 						</ul>
 					</div>
-					<div id="replaceable-content" class="col-6">
+					<div id="replaceable-content" class="col-12">
 						{% include "settings/search/time-results.html" %}
 					</div>
 					

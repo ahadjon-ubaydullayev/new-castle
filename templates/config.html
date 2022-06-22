@@ -1,59 +1,59 @@
 {% extends 'home.html' %}
-{% block title %} Sozlamalar {% endblock %}
+{% block title %} Settings {% endblock %}
 {% load static %}
 {% block content %}
 			<div class="content-item">
 			<!-- title -->
 			<h3 class="page-title">
-				Sozlamalarni kiritish
+				Settings
 			</h3>
 			<!-- config -->
 			<section class="section-page config">
 				<a class="config-box" href="/time">
 					<h4 class="config-title">
-						Dars soatini kiritish
+						Timetables
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-1.png' %}" alt="config img">
 				</a>
 
 				<a class="config-box" href="/teachers">
 					<h4 class="config-title">
-						O‘qituvchi va xodimlarturini kiritish
+						Managing teachers and room types
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-2.png' %}" alt="config img">
 				</a>
 
 				<a class="config-box" href="/salary">
 					<h4 class="config-title">
-						O‘quv badal oylik to‘lov turlarini kiritish
+						Monthly fee types
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-3.png' %}" alt="config img">
 				</a>
 
 				<a class="config-box" href="/building">
 					<h4 class="config-title">
-						Bino va Filiallarini kiritish
+						Education centre branches
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-4.png' %}" alt="config img">
 				</a>
 
 				<a class="config-box" href="{% url 'other'%}">
 					<h4 class="config-title">
-						Boshqa qo‘shimcha fanlarni kiritish
+					Additional subjects
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-5.png' %}" alt="config img">
 				</a>
 
 				<a class="config-box" href="/room">
 					<h4 class="config-title">
-						O‘quv xonalarini kiritish va nomlash
+						Entering room types
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-6.png' %}" alt="config img">
 				</a>
 
 				<a class="config-box" href="/students">
 					<h4 class="config-title">
-						O‘quvchi va talabalarni ro‘yxatdan o‘tkazish
+						Student registration
 					</h4>
 					<img class="config-img" src="{% static 'images/config-img-2.png' %}" alt="config img">
 				</a>

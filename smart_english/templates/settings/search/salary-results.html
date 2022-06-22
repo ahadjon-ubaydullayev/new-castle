@@ -1,0 +1,53 @@
+{% load static %}
+{% if salary %}
+    {% for s in page_obj %}
+					<ul class="salary-table build-table build-table--light build-table__item">
+						<li class="build-table__item build-table__item--1">
+							{{s.id}}
+						</li>
+						<li class="build-table__item build-table__item--2">
+							{{s.subject_name}}
+						</li>
+						<li class="build-table__item build-table__item--3">
+							{{s.lesson_pattern}}
+						</li>
+						<li class="build-table__item build-table__item--4">
+							{{s.lesson_type}}
+						</li>
+						<li class="build-table__item build-table__item--5">
+							{{s.group_type}}
+						</li>
+						<li class="build-table__item build-table__item--6">
+							{{s.month_amount}}
+						</li>
+            			<li class="build-table__item build-table__item--6">
+							{{ s.monthly_fee}}
+						</li>
+						<li class="build-table__item build-table__item--7">
+							<ul class="build-table__dropdown">
+								<li class="build-table__dropdown-item btn-edit">
+									<a href="{% url "salary" %}?id={{ s.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
+										Taxrirlash</a>
+								</li>
+								<li class="build-table__dropdown-item">
+									<a href="{% url "salary" %}{{ s.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
+                                        O‘chirish</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					{% endfor %}
+					<ul class="pagination">
+						{% if page_obj.has_previous %}	
+								<li><a class="pagination__item" href="?page={{ page_obj.previous_page_number }}"><img src="{% static 'images/pagination-arrow-left.svg' %}" alt="pagination icon"></a></li>
+								<li><a class="pagination__item" href="?page=1">1</a></li>	
+							{% endif %}							
+								<li><a class="pagination__item pagination__item--active" href="#">{{ page_obj.number }}</a></li>						
+							{% if page_obj.has_next %}
+								<li><a class="pagination__item" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+								<li><a class="pagination__item" href="?page={{ page_obj.next_page_number }}"><img src="{% static 'images/pagination-arrow-right.svg' %}" alt="pagination icon"></li></a>
+							{% endif %}
+					</ul>
+{% else %}
+<h3 class="page-title">No results found</h3>
+{% endif %}

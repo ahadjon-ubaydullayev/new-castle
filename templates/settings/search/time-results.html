@@ -1,7 +1,8 @@
 {% load static %}
 {% if time %}
     {% for i in page_obj %}
-					<ul class="time-table build-table build-table--light build-table__item">
+   <div class="">
+					<ul class="container-lg table table-striped time-table build-table build-table--light build-table__item">
 						<li class="build-table__item build-table__item--1">
                             {{ i.id }}
 						</li>
@@ -26,16 +27,17 @@
 						<li class="build-table__item build-table__item--7">
 							<ul class="build-table__dropdown">
 								<li class="build-table__dropdown-item btn-edit">
-									<a href="{% url "time" %}?id={{ i.id }}"><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
-										Taxrirlash</a>
+									<a href='{% url "time" %}?id={{ i.id }}'><img src="{% static 'images/dropdown-edit.svg' %}" alt="dropdown icon">
+										Edit</a>
 								</li>
 								<li class="build-table__dropdown-item">
-									<a href="{% url "time" %}{{ i.id }}"><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
-                                        O‘chirish</a>
+									<a href='{% url "time" %}{{ i.id }}'><img src="{% static 'images/dropdown-delete.svg' %}" alt="dropdown icon">
+                                        Delete</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
+					
                     {% endfor %}
 					<ul class="pagination">
 							{% if page_obj.has_previous %}	
@@ -48,6 +50,7 @@
 								<li><a class="pagination__item" href="?page={{ page_obj.next_page_number }}"><img src="{% static 'images/pagination-arrow-right.svg' %}" alt="pagination icon"></li></a>
 							{% endif %}
 					</ul>
+				</li></ul></div>
 {% else %}
 <h3 class="page-title">No results found</h3>
 {% endif %}

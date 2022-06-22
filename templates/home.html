@@ -1,82 +1,74 @@
 {% extends 'index.html' %}
 {% load static %}
-{% block title %}Smart English{% endblock %}
+{% block title %}New Castle{% endblock %}
 {% block content %}
-<div class="content-item">
+<div class="content-item bg-light text-white .bg-secondary.bg-gradient">
 		<!-- title -->
 		<h3 class="page-title">
-			Bosh sahifa
+			
 		</h3>
 		<!-- cards -->
-		<section class="section-page cards">
-			<div class="cards-box theme-blue">
+		<section class="section-page cards ">
+			<div class="shadow p-3 mb-5 bg-body rounded rounded-top cards-box theme-blue ">
 				<h1 class="cards__title">
 					<img class="cards__img" src="{% static 'images/cards-1.png' %}" alt="card box">
-					Sozlamalarni <br>
-					kiritish
+					Settings
 				</h1>
 				<ul class="cards__list">
-					<li class="cards__list-item">Dars soati va xonalarni kiritish</li>
-					<li class="cards__list-item">O‘qituvchi va xonalar turini kiritish</li>
-					<li class="cards__list-item">O‘quv badal oylik to‘lov turlarini kiritish</li>
-					<li class="cards__list-item">Bino va filiallarini kiritish</li>
-					<li class="cards__list-item">Boshqa qo‘shimcha fanlarni kiritish</li>
+					<li class="cards__list-item">Curriculum and timetables</li>
+					<li class="cards__list-item">Managing teachers and room types</li>
+					<li class="cards__list-item">Monthly fee types</li>
+					<li class="cards__list-item">Education centre branches</li>
+					<li class="cards__list-item">Additional subjects</li>
 				</ul>
-				<a class="cards-btn" href="{% url 'config'%}">Batafsil</a>
+				<a class="cards-btn" href="{% url 'config'%}">Enter</a>
 			</div>
 
-			<div class="cards-box theme-magenta">
+			<div class="shadow p-3 mb-5 bg-body rounded rounded-top cards-box theme-magenta">
 				<h1 class="cards__title">
 					<img class="cards__img" src="{% static 'images/cards-2.png' %}" alt="card box">
-					Ro‘yxatdan <br>
-					o‘tish
+					Registration
 				</h1>
 				<ul class="cards__list">
-					<li class="cards__list-item">O‘qituvchi va xodimlarni ro‘yxatdan o‘tkazish</li>
-					<li class="cards__list-item">Xodimlarni umumiy ro‘yxarga olingan jurnalga
-						o‘tish</li>
-					<li class="cards__list-item">O‘quvchi va talabalarni qabulxona ro‘yxatiga
-						olish</li>
-					<li class="cards__list-item">Talabalar ro‘yxatga olingan umumiy jurnalga
-						o‘tish</li>
+					<li class="cards__list-item">Employees registration</li>
+					<li class="cards__list-item">Empyoyees journal</li>
+					<li class="cards__list-item">Student registration</li>
+					<li class="cards__list-item">Students journal</li>
 				</ul>
-				<a class="cards-btn" href="{% url 'list-config'%}">Batafsil</a>
+				<a class="cards-btn" href="{% url 'list-config'%}">Enter</a>
 			</div>
 
-			<div class="cards-box theme-yellow">
+			<div class="shadow p-3 mb-5 bg-body rounded rounded-top cards-box theme-yellow">
 				<h1 class="cards__title">
 					<img class="cards__img" src="{% static 'images/cards-3.png' %}" alt="card box">
-					Yangi guruh tashkil <br>
-					etish
+					Adding new group
 				</h1>
 				<ul class="cards__list">
-					<li class="cards__list-item">Yangi guruh jurnalini ochish va sozlash </li>
-					<li class="cards__list-item">Qo‘shimcha guruh tashkil qilish va uni sozlash</li>
-					<li class="cards__list-item">Amaldagi faol guruhlar jurnaliga o‘tish</li>
-					<li class="cards__list-item">Tugatilgan yopilgan guruhlar jurnaliga o‘tish</li>
+					<li class="cards__list-item">Creating new group journal</li>
+					<li class="cards__list-item">Creating additional group</li>
+					<li class="cards__list-item">Active groups journal</li>
+					<li class="cards__list-item">Finished groups journal</li>
 				</ul>
-				<a class="cards-btn" href="{% url 'groups'%}">Batafsil</a>
+				<a class="cards-btn" href="{% url 'groups'%}">Enter</a>
 			</div>
 
-			<div class="cards-box theme-purple">
+			<div class="shadow p-3 mb-5 bg-body rounded rounded-top cards-box theme-purple">
 				<h1 class="cards__title">
 					<img class="cards__img" src="{% static 'images/cards-4.png' %}" alt="card box">
-					Guruhlarni <br>
-					boshqarish
+					Group management
 				</h1>
 				<ul class="cards__list">
-					<li class="cards__list-item">Mavjud guruhni keyingi bosqichga o‘tkazish</li>
-					<li class="cards__list-item">O‘quchini guruhdan boshqa guruhga o‘tkazish</li>
-					<li class="cards__list-item">Guruh o‘qituvchisini boshqa o‘qituvchiga
-						almashtirish</li>
-					<li class="cards__list-item">Dars soati tugagan guruhni yopish </li>
-					<li class="cards__list-item">Favqulodda mavjud guruhni to‘xtatish va
-						tugatish</li>
+					<li class="cards__list-item">Active groups management</li>
+					<li class="cards__list-item">Student transfer between groups</li>
+					<li class="cards__list-item">Changing group teachers</li>
+					<li class="cards__list-item">Ending active groups</li>
+					<!-- <li class="cards__list-item">Favqulodda mavjud guruhni to‘xtatish va
+						tugatish</li> -->
 				</ul>
-				<a class="cards-btn" href="{% url 'group-manage' %}">Batafsil</a>
+				<a class="cards-btn" href="{% url 'group-manage' %}">Enter</a>
 			</div>
 
-			<div class="cards-box theme-tomato">
+			<!-- <div class="cards-box theme-tomato">
 				<h1 class="cards__title">
 					<img class="cards__img" src="{% static 'images/cards-5.png' %}" alt="card box">
 					Kassani nazorat <br>
@@ -91,9 +83,9 @@
 					<li class="cards__list-item">Chiqim kassa jurnaliga o‘tish ko‘rish</li>
 				</ul>
 				<a class="cards-btn" href="#">Batafsil</a>
-			</div>
+			</div> -->
 
-			<div class="cards-box theme-green">
+			<!-- <div class="cards-box theme-green">
 				<h1 class="cards__title">
 					<img class="cards__img" src="{% static 'images/cards-6.png' %}" alt="card box">
 					Hisobotlar <br>
@@ -107,7 +99,7 @@
 					<li class="cards__list-item">Yillik hisobot jurnalini ko‘rish</li>
 				</ul>
 				<a class="cards-btn" href="#">Batafsil</a>
-			</div>
+			</div> -->
 		</section>
 		</div>
 {% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'home.html' %}
+{% block title %} Sozlamalar {% endblock %}
+{% load static %}
+{% block content %}
+			<div class="content-item">
+			<!-- title -->
+			<h3 class="page-title">
+				Sozlamalarni kiritish
+			</h3>
+			<!-- config -->
+			<section class="section-page config">
+				<a class="config-box" href="/time">
+					<h4 class="config-title">
+						Dars soatini kiritish
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-1.png' %}" alt="config img">
+				</a>
+
+				<a class="config-box" href="/teachers">
+					<h4 class="config-title">
+						O‘qituvchi va xodimlarturini kiritish
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-2.png' %}" alt="config img">
+				</a>
+
+				<a class="config-box" href="/salary">
+					<h4 class="config-title">
+						O‘quv badal oylik to‘lov turlarini kiritish
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-3.png' %}" alt="config img">
+				</a>
+
+				<a class="config-box" href="/building">
+					<h4 class="config-title">
+						Bino va Filiallarini kiritish
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-4.png' %}" alt="config img">
+				</a>
+
+				<a class="config-box" href="{% url 'other'%}">
+					<h4 class="config-title">
+						Boshqa qo‘shimcha fanlarni kiritish
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-5.png' %}" alt="config img">
+				</a>
+
+				<a class="config-box" href="/room">
+					<h4 class="config-title">
+						O‘quv xonalarini kiritish va nomlash
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-6.png' %}" alt="config img">
+				</a>
+
+				<a class="config-box" href="/students">
+					<h4 class="config-title">
+						O‘quvchi va talabalarni ro‘yxatdan o‘tkazish
+					</h4>
+					<img class="config-img" src="{% static 'images/config-img-2.png' %}" alt="config img">
+				</a>
+
+			</section> 
+					
+			</div>
+			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/libs.min.js"></script>
+		<script src="js/script.js"></script>
+{% endblock %}
